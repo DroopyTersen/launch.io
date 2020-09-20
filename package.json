@@ -30,6 +30,7 @@
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "lint": "npx eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "watch": "tsc --watch -p tsconfig.esm.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build": "rm -rf dist && npm run build:esm && npm run build:cjs"
