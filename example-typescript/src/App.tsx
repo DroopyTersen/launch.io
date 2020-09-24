@@ -2,12 +2,13 @@ import React from "react";
 import { LaunchProvider } from "launch.io";
 import Main from "./views/Main";
 import nameService from "./features/name/name.service";
+import calculatorService from "./features/calculator/calculator.service";
 import "./App.css";
 
 export default function App() {
   return (
     <LaunchProvider
-      services={[nameService]}
+      services={[nameService, calculatorService]}
       options={{ enableTimeTravel: true }}
     >
       <div className="App">

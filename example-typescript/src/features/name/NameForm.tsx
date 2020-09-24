@@ -1,6 +1,8 @@
 import React from "react";
+import { useName } from "./name.hooks";
 
-const NameForm = ({ firstName, lastName, onChange }: NameFormProps) => {
+const NameForm = () => {
+  const { firstName, lastName, updateName } = useName();
   console.log("NameForm -> firstName", firstName, lastName);
   return (
     <div>
@@ -10,7 +12,7 @@ const NameForm = ({ firstName, lastName, onChange }: NameFormProps) => {
           <input
             value={firstName}
             onChange={(e) => {
-              onChange(e.target.value, "firstName");
+              updateName(e.target.value, "firstName");
             }}
           />
         </div>
@@ -19,7 +21,7 @@ const NameForm = ({ firstName, lastName, onChange }: NameFormProps) => {
           <input
             value={lastName}
             onChange={(e) => {
-              onChange(e.target.value, "lastName");
+              updateName(e.target.value, "lastName");
             }}
           />
         </div>
@@ -27,11 +29,5 @@ const NameForm = ({ firstName, lastName, onChange }: NameFormProps) => {
     </div>
   );
 };
-
-export interface NameFormProps {
-  firstName: string;
-  lastName: string;
-  onChange: (value: string, fieldName: string) => void;
-}
 
 export default NameForm;

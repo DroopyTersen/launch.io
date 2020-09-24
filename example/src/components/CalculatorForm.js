@@ -21,4 +21,4 @@ CalculatorForm.propTypes = {
   decrease: PropTypes.func.isRequired,
 };
 
-export default CalculatorForm;
+export default React.memo(CalculatorForm);
