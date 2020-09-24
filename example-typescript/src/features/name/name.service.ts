@@ -1,16 +1,11 @@
-export interface Name {
+export interface NameState {
   firstName: string;
   lastName: string;
-}
-export interface NameState {
-  name: Name;
   isLoading: boolean;
 }
 const initialState: NameState = {
-  name: {
-    firstName: "",
-    lastName: "",
-  },
+  firstName: "",
+  lastName: "",
   isLoading: false,
 };
 

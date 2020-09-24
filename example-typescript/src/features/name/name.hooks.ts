@@ -3,6 +3,7 @@ import { useLaunch } from "launch.io";
 
 export const useName = () => {
   const { state, actions, launch } = useLaunch();
+  console.log("useName -> state", state);
 
   useEffect(() => {
     launch(actions.name.fetchName());
@@ -13,7 +14,7 @@ export const useName = () => {
   };
 
   return {
-    state: state.name,
+    state: state,
     updateName,
   };
 };

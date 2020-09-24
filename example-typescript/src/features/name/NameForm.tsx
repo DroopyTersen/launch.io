@@ -1,14 +1,14 @@
 import React from "react";
-import { Name } from "./name.service";
 
-const NameForm = ({ name, onChange }: NameFormProps) => {
+const NameForm = ({ firstName, lastName, onChange }: NameFormProps) => {
+  console.log("NameForm -> firstName", firstName, lastName);
   return (
     <div>
       <form>
         <div>
           <label>First Name</label>
           <input
-            value={name.firstName}
+            value={firstName}
             onChange={(e) => {
               onChange(e.target.value, "firstName");
             }}
@@ -17,7 +17,7 @@ const NameForm = ({ name, onChange }: NameFormProps) => {
         <div>
           <label>Last Name</label>
           <input
-            value={name.lastName}
+            value={lastName}
             onChange={(e) => {
               onChange(e.target.value, "lastName");
             }}
@@ -29,7 +29,8 @@ const NameForm = ({ name, onChange }: NameFormProps) => {
 };
 
 export interface NameFormProps {
-  name: Name;
+  firstName: string;
+  lastName: string;
   onChange: (value: string, fieldName: string) => void;
 }
 

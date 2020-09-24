@@ -9,6 +9,7 @@ import { useName, NameForm } from "../features/name";
 
 export default function Main() {
   const nameContext = useName();
+  console.log("Main -> nameContext", nameContext);
   //   const historyContext = useHistory();
   //   const calculatorContext = useCalculator();
 
@@ -18,7 +19,7 @@ export default function Main() {
 
   return (
     <div>
-      <NameForm name={nameContext.state.name} onChange={handleNameChange} />
+      <NameForm {...nameContext.state.name} onChange={handleNameChange} />
       {/* <NameForm name={nameContext.state} nameChange={handleNameChange} />
       <CalculatorForm
         value={calculatorContext.state.value}
