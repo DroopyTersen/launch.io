@@ -8,18 +8,18 @@ import { useName, NameForm } from "../features/name";
 // import CalculatorForm from "../components/CalculatorForm";
 
 export default function Main() {
-  const nameContext = useName();
-  console.log("Main -> nameContext", nameContext);
+  const { updateName, ...name } = useName();
+  // console.log("Main -> nameContext", nameContext);
   //   const historyContext = useHistory();
   //   const calculatorContext = useCalculator();
 
   const handleNameChange = (value, propName) => {
-    nameContext.updateName({ [propName]: value });
+    updateName({ [propName]: value });
   };
 
   return (
     <div>
-      <NameForm {...nameContext.state.name} onChange={handleNameChange} />
+      <NameForm {...name} onChange={handleNameChange} />
       {/* <NameForm name={nameContext.state} nameChange={handleNameChange} />
       <CalculatorForm
         value={calculatorContext.state.value}

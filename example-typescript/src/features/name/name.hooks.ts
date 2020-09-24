@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useLaunch } from "launch.io";
 
 export const useName = () => {
@@ -9,12 +9,12 @@ export const useName = () => {
     launch(actions.name.fetchName());
   }, [launch, actions.name]);
 
-  const updateName = (updates) => {
-    launch(actions.name.updateName(updates));
-  };
-
-  return {
-    state: state,
-    updateName,
-  };
+  return useMemo(() => {
+    return {
+      ...state.name,
+      updateName: (updates) => {
+        launch(actions.name.updateName(updates));
+      },
+    };
+  }, [state.name, actions.name]);
 };
