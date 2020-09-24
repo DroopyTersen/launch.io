@@ -3,7 +3,6 @@ import { useName } from "./name.hooks";
 
 const NameForm = () => {
   const { firstName, lastName, updateName } = useName();
-  console.log("NameForm -> firstName", firstName, lastName);
   return (
     <div>
       <form>
@@ -12,18 +11,20 @@ const NameForm = () => {
           <input
             value={firstName}
             onChange={(e) => {
-              updateName(e.target.value, "firstName");
+              updateName({ firstName: e.target.value });
             }}
           />
+          <h3>{firstName}</h3>
         </div>
         <div>
           <label>Last Name</label>
           <input
             value={lastName}
             onChange={(e) => {
-              updateName(e.target.value, "lastName");
+              updateName({ lastName: e.target.value });
             }}
           />
+          <h3>{lastName}</h3>
         </div>
       </form>
     </div>

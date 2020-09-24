@@ -7,11 +7,6 @@ export default function Main() {
     <div>
       <NameForm />
       <CalculatorForm />
-
-      {/* <HistoryForm
-        rewind={historyContext.rewind}
-        fastForward={historyContext.fastForward}
-      ></HistoryForm> */}
     </div>
   );
 }
