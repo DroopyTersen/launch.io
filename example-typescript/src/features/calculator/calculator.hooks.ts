@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useLaunch } from "launch.io";
 
 export const useCalculator = () => {
